@@ -120,7 +120,7 @@ app.put('/users', authenticationToken, async (request, response) => {
     const responseCode = await response.status()
 
     if (responseCode === 200) {
-        response.send("User Data fetched Successfully!")
+        response.send("User Data Updated Successfully!")
     } else {
         response.send(responseCode)
     }
@@ -138,11 +138,11 @@ app.put('/customers', authenticationToken, async (request, response) => {
         created_on) VALUES ${id, shopkeeper_id, name, phone, address, created_on}
       `
 
-    const newUserUpdateResponse = await dbUsers.run(customerDetails);
+    const newCustomerUpdateResponse = await dbUsers.run(customerDetails);
     const responseCode = await response.status()
 
     if (responseCode === 200) {
-        response.send("User Data fetched Successfully!")
+        response.send("Customer Data Updated Successfully!")
     } else {
         response.send(responseCode)
     }
